@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Liore</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    ::selection {
+    background-color:#576cb1;  /* Black background */
+    color: white;             /* White text */
+}
+.logo{
+        width:80px;
+        height:auto;
+        margin-right:20px;
+    }
+    /* Custom styling for image */
+    .founder-img {
+      width: 250px;  /* Set a smaller width */
+      height: 250px; /* Set a smaller height */
+      border-radius: 20px; /* 20px border radius */
+      object-fit: cover;  /* Maintain aspect ratio and cover the container */
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-white shadow-md backdrop-blur-lg bg-white/90">
+    <div class="flex items-center">
+      <img class="logo" src="pnp.png" alt="Liore Logo" />
+    </div>
+  
+  
+    <nav class="space-x-6 hidden md:flex">
+      <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+      <a href="products.html" class="text-gray-600 hover:text-blue-700">Products</a>
+      <a href="aboutus.html" class="text-gray-600 hover:text-blue-700">About</a>
+      <a href="index.html#contact" class="text-gray-600 hover:text-blue-700">Contact</a>
+    </nav>
+  
+    <div class="space-x-4 hidden md:flex">
+      <a href="sign/SignUp_LogIn_Form.html" class="px-4 py-2 border border-[#0b2774] text-[#0b2774] rounded hover:bg-[#0f349b] hover:text-white transition">Login</a>
+      <a href="sign/SignUp_LogIn_Form.html" class="px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b] transition">Sign Up</a>
+    </div>
+  
+    <button id="menu-toggle" class="md:hidden text-gray-600 text-2xl">☰</button>
+  </header>
+  
+  
+  <div id="mobile-menu" class="hidden flex flex-col items-center bg-white shadow-md px-6 py-4 md:hidden space-y-4">
+    <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+    <a href="products.html" class="text-gray-600 hover:text-blue-700">Products</a>
+    <a href="aboutus.html" class="text-gray-600 hover:text-blue-700">About</a>
+    <a href="index.html#contact" class="text-gray-600 hover:text-blue-700">Contact</a>
+    <a href="sign/SignUp_LogIn_Form.html" class="w-full text-center px-4 py-2 border border-[#0b2774] text-[#0b2774] rounded hover:bg-[#0f349b] hover:text-white transition">Login</a>
+    <a href="sign/SignUp_LogIn_Form.html" class="w-full text-center px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b] transition">Sign Up</a>
+  </div>
+  
+ 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  
+
+
+  <section class="bg-blue-100 py-16 px-6 fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl font-extrabold text-blue-900 mb-4">Our Story</h1>
+      <p class="text-gray-700 text-lg mb-10">Founded from friendship, built with purpose.</p>
+      <div class="text-left space-y-6">
+        <p class="text-gray-700 text-md">Liore was started by two passionate young girls, <strong>Fathima</strong> and her friend <strong>Tabassum</strong>, right after they completed their 11th class. United by a shared dream of creating something that brings healing and confidence to people battling sensitive skin conditions, they turned their vision into a reality.</p>
+
+        <p class="text-gray-700 text-md">From their early days of experimenting with natural ingredients at home, to building a brand trusted by patients and loved ones, the journey of Liore reflects resilience, creativity, and care. Their core mission remains: <em>to provide gentle, effective products that truly care for skin and soul.</em></p>
+
+        <p class="text-gray-700 text-md">Today, Liore stands as a symbol of compassion-driven skincare — and it all began with the courage of two young founders, driven by hope and friendship.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-12 px-6 bg-white fade-in">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 text-center">
+      <div>
+        <img src="founder.jpg" class="founder-img mx-auto shadow-lg mb-4" alt="Syed Sarah">
+        
+        <h2 class="text-xl font-bold text-blue-900">Fathima</h2>
+        <p class="text-gray-600">Founder</p>
+      </div>
+      <div>
+        <img src="owner.jpg" class="founder-img mx-auto shadow-lg mb-4" alt="Patan Tabassum">
+        <h2 class="text-xl font-bold text-blue-900">Tabassum</h2>
+        <p class="text-gray-600">Co-Founder</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="bg-white py-8 border-t fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gray-600">Follow us on social media @liore</p>
+      <p class="text-sm text-gray-400 mt-2">© 2025 Liore. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

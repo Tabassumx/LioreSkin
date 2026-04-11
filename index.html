@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lioré</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .product{
+        width:400px;
+        height:auto;
+        margin-right:100px;
+        margin-left:100px;
+    }
+    .logo{
+        width:80px;
+        height:auto;
+        margin-right:20px;
+    }
+    ::selection {
+    background-color:#576cb1;  /* Black background */
+    color: white;             /* White text */
+}
+.w-14 {
+    width: 450px;
+}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <header class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-white shadow-md backdrop-blur-lg bg-white/90">
+    <div class="flex items-center">
+      <img class="logo" src="pnp.png" alt="Liore Logo" />
+    </div>
+  
+    <!-- Desktop Navigation -->
+    <nav class="space-x-6 hidden md:flex">
+      <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+      <a href="products.html" class="text-gray-600 hover:text-blue-700">Products</a>
+      <a href="aboutus.html" class="text-gray-600 hover:text-blue-700">About</a>
+      <a href="#contact" class="text-gray-600 hover:text-blue-700">Contact</a>
+    </nav>
+  
+    <!-- Desktop Buttons -->
+    <div class="space-x-4 hidden md:flex items-center">
+      <a href="sign/SignUp_LogIn_Form.html" class="px-4 py-2 border border-[#0b2774] text-[#0b2774] rounded hover:bg-[#0f349b] hover:text-white transition">Login</a>
+      <a href="sign/SignUp_LogIn_Form.html" class="px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b] transition">Sign Up</a>
+      <button id="cart-toggle" class="relative text-gray-600 hover:text-[#0b2774] text-2xl ml-4">
+        🛒
+        <span id="cart-count" class="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+      </button>
+    </div>
+  
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden text-gray-600 text-2xl">☰</button>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden flex flex-col items-center bg-white shadow-md px-6 py-4 md:hidden space-y-4">
+    <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+    <a href="products.html" class="text-gray-600 hover:text-blue-700">Products</a>
+    <a href="aboutus.html" class="text-gray-600 hover:text-blue-700">About</a>
+    <a href="#contact" class="text-gray-600 hover:text-blue-700">Contact</a>
+    <a href="sign/SignUp_LogIn_Form.html" class="w-full text-center px-4 py-2 border border-[#0b2774] text-[#0b2774] rounded hover:bg-[#0f349b] hover:text-white transition">Login</a>
+    <a href="sign/SignUp_LogIn_Form.html" class="w-full text-center px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b] transition">Sign Up</a>
+    <button id="mobile-cart-toggle" class="w-full text-center px-4 py-2 border border-gray-300 rounded text-gray-700 font-semibold hover:bg-gray-50 flex justify-center items-center gap-2">
+      Cart (<span id="mobile-cart-count">0</span>)
+    </button>
+  </div>
+  
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  
+  
+
+ 
+  <section class="bg-gradient-to-br from-blue-100 via-white to-blue-50 py-24 px-6 fade-in">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <h1 class="text-5xl font-extrabold text-blue-900 leading-tight">
+        Calm, Heal, and Shine<br />
+        with 
+        <img src="pnp.png" alt="Liore Logo" class="inline-block w-[450px] align-middle ml-2" />
+      </h1>
+      <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+        We create gentle skincare for those who need extra care — from sensitive skin to healing journeys. Every product is made with compassion, backed by nature.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a href="#products" class="bg-[#0b2774] hover:bg-[#0f349b] text-white px-6 py-3 rounded-full shadow-md transition">Explore Products</a>
+        <a href="#contact" class="bg-transparent text-[#0b2774] font-semibold px-8 py-3 rounded-lg border-2 border-[#0f349b] hover:bg-[#0f349b] hover:text-white hover:border-transparent transition-all duration-300 shadow-md">
+          Let’s Connect
+        </a>
+        
+          
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="products" class="px-6 py-12 space-y-12 bg-white">
+    <div class="flex flex-col md:flex-row items-center gap-6 fade-in">
+      <img src="cream.png" alt="Product 1" class="product" />
+      <div>
+        <h2 class="text-2xl font-semibold text-blue-900">Comfort your skin, calm your day.</h2>
+        <p class="text-gray-600 mt-2">Specially formulated for eczema-prone skin, Dermacalm brings instant soothing relief from itchiness, dryness, and inflammation without harsh chemicals..</p>
+        <button class="mt-4 px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b]">Learn More</button>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row-reverse items-center gap-6 fade-in">
+      <img src="amp.png" alt="Product 2" class="product" />
+      <div>
+        <h2 class="text-2xl font-semibold text-blue-900">Healing beyond the surface.</h2>
+        <p class="text-gray-600 mt-2">Gentle care made for cancer patients undergoing treatment. Healsoft helps protect, hydrate, and soothe fragile skin exposed to radiation or chemotherapy.</p>
+        <button class="mt-4 px-4 py-2 bg-[#0b2774] text-white rounded hover:bg-[#0f349b]">See Details</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-blue-900 text-white py-12 text-center fade-in">
+    <h3 class="text-2xl font-bold mb-4">Blue Cottons</h3>
+    <p class="max-w-xl mx-auto text-blue-100">Crafted with the finest cotton blends for added comfort, softness, and therapeutic benefits.</p>
+  </section>
+
+
+  <section class="py-12 bg-blue-50 text-center fade-in">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-3xl font-bold text-blue-900">98%</h4>
+        <p class="text-gray-600">Customer Satisfaction</p>
+      </div>
+      <div>
+        <h4 class="text-3xl font-bold text-blue-900">100%</h4>
+        <p class="text-gray-600">Natural Ingredients</p>
+      </div>
+      <div>
+        <h4 class="text-3xl font-bold text-blue-900">24/7</h4>
+        <p class="text-gray-600">Customer Support</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-gradient-to-br from-blue-100 to-white py-16 px-6 fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold text-blue-900 mb-6">Let’s Talk</h2>
+      <p class="text-gray-600 mb-12">Have a question or just want to share feedback? We’d love to hear from you.</p>
+      <form class="bg-white shadow-lg rounded-lg p-8 grid gap-6 md:grid-cols-2">
+        <div class="col-span-2 md:col-span-1">
+          <label class="block text-left text-gray-700 font-semibold mb-2">Your Name</label>
+          <input type="text" class="w-full border border-blue-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tabassum" />
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <label class="block text-left text-gray-700 font-semibold mb-2">Email Address</label>
+          <input type="email" class="w-full border border-blue-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="you@example.com" />
+        </div>
+        <div class="col-span-2">
+          <label class="block text-left text-gray-700 font-semibold mb-2">Message</label>
+          <textarea class="w-full border border-blue-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" rows="5" placeholder="Share your thoughts..."></textarea>
+        </div>
+        <div class="col-span-2 text-center">
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-md">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <footer id="contact" class="bg-white py-8 border-t fade-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gray-600">Follow us on social media @liore</p>
+      <p class="text-sm text-gray-400 mt-2">© 2025 Liore. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <div id="cart-backdrop" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+  <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-[90%] md:w-[400px] bg-white shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <h2 class="text-2xl font-bold text-[#0b2774]">Your Cart</h2>
+      <button id="close-cart" class="text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
+    </div>
+    <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+   
+    </div>
+    <div class="p-6 border-t border-gray-100 bg-gray-50">
+      <div class="flex justify-between items-center mb-6">
+        <span class="text-lg font-semibold text-gray-600">Total:</span>
+        <span id="cart-total-price" class="text-2xl font-bold text-[#0b2774]">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="w-full bg-[#0b2774] text-white font-semibold py-4 rounded-lg hover:bg-[#0f349b] transition shadow-lg">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <div id="checkout-backdrop" class="fixed inset-0 bg-black/50 z-[80] hidden transition-opacity duration-300 opacity-0 backdrop-blur-sm flex items-center justify-center">
+    <div id="checkout-modal" class="bg-white rounded-2xl shadow-2xl w-[95%] max-w-lg overflow-hidden transform scale-95 transition-transform duration-300 relative max-h-[90vh] overflow-y-auto">
+      <button id="close-checkout" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-3xl font-light z-10">&times;</button>
+      
+      <div id="checkout-form-container" class="p-8">
+        <h2 class="text-3xl font-bold text-[#0b2774] mb-6">Secure Checkout</h2>
+        
+        <div class="flex rounded-lg overflow-hidden mb-8 border border-gray-200">
+          <button class="pay-tab flex-1 py-3 text-sm font-semibold bg-[#0b2774] text-white transition" data-method="pay-card">Credit Card</button>
+          <button class="pay-tab flex-1 py-3 text-sm font-semibold bg-gray-50 text-gray-600 hover:bg-gray-100 transition" data-method="pay-paypal">PayPal</button>
+        </div>
+
+        <form id="checkout-form" class="space-y-4">
+          <input type="text" required placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+          <input type="email" required placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+          <input type="text" required placeholder="Shipping Address" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+          
+          <div id="pay-card" class="pay-method block space-y-4 pt-2">
+            <input type="text" placeholder="Card Number (0000 0000 0000 0000)" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+            <div class="flex gap-4">
+              <input type="text" placeholder="MM/YY" class="w-1/2 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+              <input type="text" placeholder="CVC" class="w-1/2 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#0b2774] focus:ring-1 focus:ring-[#0b2774]">
+            </div>
+          </div>
+
+          <div id="pay-paypal" class="pay-method hidden pt-4">
+            <p class="text-sm text-gray-500 italic text-center">You will be redirected to PayPal securely after placing your order.</p>
+          </div>
+
+          <button type="submit" class="w-full bg-[#0b2774] text-white font-bold py-4 rounded-lg mt-6 hover:bg-[#0f349b] transition shadow-lg">
+            Pay <span id="checkout-total"></span>
+          </button>
+        </form>
+      </div>
+
+      <div id="order-success-container" class="p-8 text-center hidden">
+        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Order Confirmed!</h2>
+        <p class="text-sm text-gray-500 mb-6">Your payment was successful and your order is being processed.</p>
+        
+        <p id="order-id-display" class="font-mono text-[#0b2774] font-bold text-lg mb-4"></p>
+        
+        <div id="order-bill-details" class="bg-gray-50 text-left p-6 rounded-lg text-sm border border-gray-200 mb-8 max-h-48 overflow-y-auto">
+          <!-- Bill generated here -->
+        </div>
+        
+        <button id="continue-shopping" class="w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
